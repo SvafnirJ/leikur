@@ -1,0 +1,30 @@
+<img id="zero" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/zeroblur.jpg">
+<img id="one" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/oneblur.jpg">
+<img id="two" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/twoblur.jpg">
+<img id="three" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/threeblur.jpg">
+<img id="four" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/fourblur.jpg">
+<img id="five" src="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/fiveblur.jpg">
+
+body { margin:20px; }
+img { margin:20px; }
+
+window.onload=init;
+function init(){
+  var images=document.getElementsByTagName("img");
+  for(var i=0;i<images.length;i++){
+    images[i].onmouseover=showanswer;
+    images[i].onmouseout=reblur;
+  }
+}
+function showanswer(eventObj){
+  var image=eventObj.target;
+  var name=image.id;
+  name="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/"+name+".jpg";
+  image.src=name;
+}
+function reblur(eventObj){
+  var image=eventObj.target;
+  var name=image.id;
+  name="https://raw.githubusercontent.com/bethrobson/Head-First-JavaScript-Programming/master/chapter9/"+name+"blur.jpg";
+  image.src=name;
+}
